@@ -9,6 +9,11 @@ class Input extends React.Component {
     this.setState({ inputValue: event.target.value });
   };
 
+  hundleSubmit = (event) => {
+    console.log("!!! Click on submit");
+    console.log(event.target.type);
+  };
+
   render() {
     return (
       <div>
@@ -17,6 +22,10 @@ class Input extends React.Component {
           value={this.state.inputValue}
           onChange={this.hundleInputChange}
         />
+
+        <button type="button" onChange={this.hundleSubmit}>
+          Submit
+        </button>
       </div>
     );
   }
