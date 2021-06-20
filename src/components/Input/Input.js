@@ -14,6 +14,10 @@ class Input extends React.Component {
     console.log(event.target.type);
   };
 
+  hundleBlur = () => {
+    console.log("LOST FOCUS FROM INPUT");
+  };
+
   render() {
     return (
       <div>
@@ -23,7 +27,11 @@ class Input extends React.Component {
           onChange={this.hundleInputChange}
         />
 
-        <button type="button" onChange={this.hundleSubmit}>
+        <button
+          type="button"
+          onClick={this.hundleSubmit}
+          onBlur={this.hundleBlur}
+        >
           Submit
         </button>
       </div>
